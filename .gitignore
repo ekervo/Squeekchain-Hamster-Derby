@@ -9,3 +9,4 @@ contracts/cache
 traces.jsonl
 console.jsonl
 .compass/
+!.env.production

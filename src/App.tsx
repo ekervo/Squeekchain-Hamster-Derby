@@ -137,7 +137,12 @@ export default function App() {
               </a>
             </span>
           ) : (
-            'Need test USDC? Use the "Get test USDC" button in the Arc Studio sidebar.'
+            <span>
+              Need test USDC?{' '}
+              <a href="https://faucet.circle.com" target="_blank" rel="noopener noreferrer" className="underline">
+                Open the Circle faucet
+              </a>
+            </span>
           )}
         </p>
       </div>
