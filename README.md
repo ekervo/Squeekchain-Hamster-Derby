@@ -22,7 +22,7 @@ Environment variables:
 - `CIRCLE_API_KEY`, `CIRCLE_ENTITY_SECRET`: Circle developer-controlled wallet credentials, only needed to run the keeper bot.
 - `KEEPER_WALLET_ETH_SEPOLIA`, `KEEPER_WALLET_BASE_SEPOLIA`, `KEEPER_WALLET_ARC_TESTNET`: keeper wallet ids, written by `bun run keeper:setup`.
 - `KEEPER_POLL_MS`, `KEEPER_IDLE_ROUND_MINUTES`: optional keeper tuning.
-- `RPC_PROXY_BASE_URL`, `RPC_PROXY_TOKEN`, `RPC_PROXY_CHAINS`: provisioned by Arc Studio, optional outside it.
+- `RPC_PROXY_BASE_URL`, `RPC_PROXY_TOKEN`, `RPC_PROXY_CHAINS`: optional RPC proxy settings used by the keeper bot; public RPC URLs are used when they are not set.
 
 Run: `bun run dev`
 
