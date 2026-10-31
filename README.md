@@ -1,8 +1,6 @@
 # Hamster Derby
 
-A USDC prediction game on simulated hamster-wheel races. Each round has four hamsters: pick one, stake USDC, and winners split the whole pot. If a round cannot be settled, everyone is refunded. There is no owner and no fee. Bets are placed in USDC on Arc Testnet and in ETH on Ethereum Sepolia and Base Sepolia, with test funds only. A built-in guide explains the game for newcomers, and a race arena replays each result as an animated hamster race, and a seed block proof lets anyone recompute the result from the block hash in their browser.
-
-Built with [Arc Studio](https://studio.arc.io)
+A prediction game on simulated hamster-wheel races. Each round has four hamsters: pick one, stake funds, and winners split the whole pot. If a round cannot be settled, everyone is refunded. There is no owner and no fee. Bets are placed in USDC on Arc Testnet and in ETH on Ethereum Sepolia and Base Sepolia, with test funds only. A built-in guide explains the game for newcomers, and a race arena replays each result as an animated hamster race, and a seed block proof lets anyone recompute the result from the block hash in their browser.
 
 ## Tech stack
 
