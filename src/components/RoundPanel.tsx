@@ -12,6 +12,7 @@ import { BetPanel } from './BetPanel'
 import { RoundHistory } from './RoundHistory'
 import { PhaseStepper } from './PhaseStepper'
 import { RaceArena } from './RaceArena'
+import { HowItWorks } from './HowItWorks'
 import { BlockProof } from './BlockProof'
 
 const SETTLE_WINDOW = 200n
@@ -190,7 +191,8 @@ export function RoundPanel({ deployment }: { deployment: DerbyDeployment }) {
   }
 
   return (
-    <div className="space-y-3">
+    <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
+      <div className="min-w-0 space-y-4">
       <section className="glass-card relative overflow-hidden rounded-3xl p-5">
         <span
           aria-hidden="true"
@@ -266,6 +268,10 @@ export function RoundPanel({ deployment }: { deployment: DerbyDeployment }) {
         onSettle={() => activeId !== undefined && void tx.settleRound(activeId)}
         onClaim={() => activeId !== undefined && void tx.claim(activeId)}
       />
+      </div>
+
+      <div className="min-w-0 space-y-4">
+        <HowItWorks deployment={deployment} />
 
       <BlockProof deployment={deployment} roundId={activeId} round={round} latestBlock={clock?.blockNumber} />
 
@@ -289,6 +295,7 @@ export function RoundPanel({ deployment }: { deployment: DerbyDeployment }) {
         has no owner and takes no fee. The race is simulated from a future block hash, so validators could nudge it
         slightly: play with testnet funds only.
       </p>
+      </div>
     </div>
   )
 }

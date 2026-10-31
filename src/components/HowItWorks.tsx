@@ -83,7 +83,7 @@ export function HowItWorks({ deployment }: { deployment: DerbyDeployment }) {
   }
 
   return (
-    <section className="glass-card mt-4 rounded-3xl p-5" aria-labelledby="guide-title">
+    <section className="glass-card rounded-3xl p-5" aria-labelledby="guide-title">
       <button
         type="button"
         onClick={toggle}

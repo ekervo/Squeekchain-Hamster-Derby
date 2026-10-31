@@ -4,7 +4,6 @@ import { NetworkBase, NetworkEthereum, TokenETH, TokenUSDC } from '@web3icons/re
 import { DEPLOYMENTS, FAUCETS } from '@/lib/derby'
 import { RoundPanel } from '@/components/RoundPanel'
 import { HamsterAvatar } from '@/components/HamsterAvatar'
-import { HowItWorks } from '@/components/HowItWorks'
 
 function ArcMark() {
   return (
@@ -51,7 +50,7 @@ export default function App() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-md px-4 pb-24 pt-6">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-4 pb-24 pt-6 sm:px-6">
         <header className="mb-5 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <span className="glass-pill flex h-11 w-11 items-center justify-center rounded-2xl">
@@ -76,7 +75,7 @@ export default function App() {
           </ConnectKitButton.Custom>
         </header>
 
-        <div className="glass-pill mb-4 flex gap-1 rounded-full p-1" role="tablist" aria-label="Select network">
+        <div className="glass-pill mx-auto mb-5 grid max-w-xl grid-cols-3 gap-1 rounded-full p-1" role="tablist" aria-label="Select network">
           {DEPLOYMENTS.map((d) => {
             const active = d.chainId === chainId
             return (
@@ -86,7 +85,7 @@ export default function App() {
                 role="tab"
                 aria-selected={active}
                 onClick={() => setChainId(d.chainId)}
-                className="flex min-w-0 flex-1 flex-col items-center justify-center gap-0.5 rounded-full px-1 text-[12px] font-semibold leading-tight"
+                className="flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-full px-1 text-[12px] font-semibold leading-tight"
                 style={{
                   minHeight: 52,
                   background: active ? 'var(--accent)' : 'transparent',
@@ -110,12 +109,7 @@ export default function App() {
         </div>
 
         {deployment ? (
-          <>
-            <HowItWorks key={`guide-${deployment.chainId}`} deployment={deployment} />
-            <div className="mt-4">
-              <RoundPanel key={deployment.chainId} deployment={deployment} />
-            </div>
-          </>
+          <RoundPanel key={deployment.chainId} deployment={deployment} />
         ) : (
           <p className="glass-card rounded-3xl p-5 text-sm" style={{ color: 'var(--muted)' }}>
             Contract addresses are not configured in .env.
